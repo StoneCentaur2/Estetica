@@ -32,13 +32,14 @@ namespace Estetica
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.Salir = new System.Windows.Forms.Button();
             this.Citas = new System.Windows.Forms.Button();
-            this.Ventas = new System.Windows.Forms.Button();
+            this.Trabajos = new System.Windows.Forms.Button();
             this.Conexion = new System.Windows.Forms.Button();
             this.Usuario = new System.Windows.Forms.TextBox();
             this.Contraseña = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Inicio_de_sesion = new System.Windows.Forms.Button();
+            this.Bitacora = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Salir
@@ -66,7 +67,7 @@ namespace Estetica
             this.Citas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Citas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Citas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Citas.Location = new System.Drawing.Point(356, 428);
+            this.Citas.Location = new System.Drawing.Point(419, 428);
             this.Citas.Name = "Citas";
             this.Citas.Size = new System.Drawing.Size(137, 46);
             this.Citas.TabIndex = 1;
@@ -74,21 +75,21 @@ namespace Estetica
             this.Citas.UseVisualStyleBackColor = false;
             this.Citas.Click += new System.EventHandler(this.Citas_Click);
             // 
-            // Ventas
+            // Trabajos
             // 
-            this.Ventas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.Ventas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Ventas.FlatAppearance.BorderSize = 2;
-            this.Ventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Ventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Ventas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Ventas.Location = new System.Drawing.Point(526, 428);
-            this.Ventas.Name = "Ventas";
-            this.Ventas.Size = new System.Drawing.Size(137, 46);
-            this.Ventas.TabIndex = 2;
-            this.Ventas.Text = "Trabajos";
-            this.Ventas.UseVisualStyleBackColor = false;
-            this.Ventas.Click += new System.EventHandler(this.Ventas_Click);
+            this.Trabajos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Trabajos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Trabajos.FlatAppearance.BorderSize = 2;
+            this.Trabajos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Trabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Trabajos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Trabajos.Location = new System.Drawing.Point(562, 428);
+            this.Trabajos.Name = "Trabajos";
+            this.Trabajos.Size = new System.Drawing.Size(137, 46);
+            this.Trabajos.TabIndex = 2;
+            this.Trabajos.Text = "Trabajos";
+            this.Trabajos.UseVisualStyleBackColor = false;
+            this.Trabajos.Click += new System.EventHandler(this.Ventas_Click);
             // 
             // Conexion
             // 
@@ -108,17 +109,19 @@ namespace Estetica
             // 
             // Usuario
             // 
+            this.Usuario.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Usuario.Location = new System.Drawing.Point(621, 68);
             this.Usuario.Name = "Usuario";
-            this.Usuario.Size = new System.Drawing.Size(145, 22);
+            this.Usuario.Size = new System.Drawing.Size(145, 27);
             this.Usuario.TabIndex = 4;
             this.Usuario.TextChanged += new System.EventHandler(this.Usuario_TextChanged);
             // 
             // Contraseña
             // 
+            this.Contraseña.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
             this.Contraseña.Location = new System.Drawing.Point(621, 172);
             this.Contraseña.Name = "Contraseña";
-            this.Contraseña.Size = new System.Drawing.Size(145, 22);
+            this.Contraseña.Size = new System.Drawing.Size(145, 27);
             this.Contraseña.TabIndex = 5;
             this.Contraseña.UseSystemPasswordChar = true;
             // 
@@ -162,6 +165,23 @@ namespace Estetica
             this.Inicio_de_sesion.UseVisualStyleBackColor = false;
             this.Inicio_de_sesion.Click += new System.EventHandler(this.Inicio_de_sesion_Click);
             // 
+            // Bitacora
+            // 
+            this.Bitacora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Bitacora.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Bitacora.FlatAppearance.BorderSize = 2;
+            this.Bitacora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Bitacora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bitacora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Bitacora.Location = new System.Drawing.Point(276, 428);
+            this.Bitacora.Name = "Bitacora";
+            this.Bitacora.Size = new System.Drawing.Size(137, 46);
+            this.Bitacora.TabIndex = 9;
+            this.Bitacora.Text = "Bitacora";
+            this.Bitacora.UseVisualStyleBackColor = false;
+            this.Bitacora.Visible = false;
+            this.Bitacora.Click += new System.EventHandler(this.Bitacora_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -172,13 +192,14 @@ namespace Estetica
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.Salir;
             this.ClientSize = new System.Drawing.Size(985, 509);
+            this.Controls.Add(this.Bitacora);
             this.Controls.Add(this.Inicio_de_sesion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Contraseña);
             this.Controls.Add(this.Usuario);
             this.Controls.Add(this.Conexion);
-            this.Controls.Add(this.Ventas);
+            this.Controls.Add(this.Trabajos);
             this.Controls.Add(this.Citas);
             this.Controls.Add(this.Salir);
             this.DoubleBuffered = true;
@@ -197,13 +218,14 @@ namespace Estetica
 
         private System.Windows.Forms.Button Salir;
         private System.Windows.Forms.Button Citas;
-        private System.Windows.Forms.Button Ventas;
+        private System.Windows.Forms.Button Trabajos;
         private System.Windows.Forms.Button Conexion;
         private System.Windows.Forms.TextBox Usuario;
         private System.Windows.Forms.TextBox Contraseña;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Inicio_de_sesion;
+        private System.Windows.Forms.Button Bitacora;
     }
 }
 
