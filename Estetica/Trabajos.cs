@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace Estetica
 {
     public partial class Trabajos : Form
     {
+        SqlConnection conexion = new SqlConnection("Data source=.\\sqlexpress; initial catalog=Estetica; user id=Orlando; Password=admin;");
         public Trabajos()
         {
             InitializeComponent();
@@ -49,7 +51,11 @@ namespace Estetica
 
         private void Ventas_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BD.SelectDataTable("select * from Trabajos");
+            string query = "SELECT * FROM Trabajos";
+            SqlDataAdapter cmd = new SqlDataAdapter(query, conexion);
+            DataTable dt = new DataTable();
+            cmd.Fill(dt);
+            dataGridView1.DataSource = dt;
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e) //ID

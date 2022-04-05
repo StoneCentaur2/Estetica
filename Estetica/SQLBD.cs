@@ -21,7 +21,7 @@ namespace Estetica
             {
                 cn= new SqlConnection("Data source=.\\sqlexpress; initial catalog=Estetica; user id=Orlando; Password=admin;");
                 cn.Open();
-                MessageBox.Show("Conexión con exito");
+                MessageBox.Show("Conexión abierta");
             }
             catch(Exception ex)
             {
