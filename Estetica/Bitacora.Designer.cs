@@ -34,6 +34,7 @@ namespace Estetica
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Salir = new System.Windows.Forms.Button();
             this.Respaldar = new System.Windows.Forms.Button();
+            this.Limpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +58,7 @@ namespace Estetica
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(713, 488);
+            this.dataGridView1.Size = new System.Drawing.Size(1008, 488);
             this.dataGridView1.TabIndex = 4;
             // 
             // Salir
@@ -91,12 +92,26 @@ namespace Estetica
             this.Respaldar.UseVisualStyleBackColor = false;
             this.Respaldar.Click += new System.EventHandler(this.Respaldar_Click);
             // 
+            // Limpiar
+            // 
+            this.Limpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.Limpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Limpiar.Location = new System.Drawing.Point(12, 213);
+            this.Limpiar.Name = "Limpiar";
+            this.Limpiar.Size = new System.Drawing.Size(137, 46);
+            this.Limpiar.TabIndex = 7;
+            this.Limpiar.Text = "Limpiar";
+            this.Limpiar.UseVisualStyleBackColor = false;
+            // 
             // Bitacora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(101)))));
-            this.ClientSize = new System.Drawing.Size(936, 512);
+            this.ClientSize = new System.Drawing.Size(1231, 512);
+            this.Controls.Add(this.Limpiar);
             this.Controls.Add(this.Respaldar);
             this.Controls.Add(this.Salir);
             this.Controls.Add(this.dataGridView1);
@@ -119,5 +134,6 @@ namespace Estetica
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button Salir;
         private System.Windows.Forms.Button Respaldar;
+        private System.Windows.Forms.Button Limpiar;
     }
 }

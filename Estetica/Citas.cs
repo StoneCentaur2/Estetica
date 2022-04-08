@@ -38,7 +38,7 @@ namespace Estetica
                     //Creación de ID de la cita
                     Random random = new Random();
                     //Inserción de la cita
-                    MessageBox.Show(BD.insertarCitas(Convert.ToInt32(random.Next(10000, 10000001)), Convert.ToInt32(Nom.Text), Num_tel.Text, dateTimePicker1.Text, TipoTrabajo.Text, Hora.Text));
+                    MessageBox.Show(BD.insertarCitas(Convert.ToInt32(random.Next(10000, 10000001)), Convert.ToInt32(Num_tel.Text), Nom.Text, dateTimePicker1.Text, TipoTrabajo.Text, Hora.Text));
                     //Para que cargue los datos que se han guardado
                     string query = "SELECT * FROM Citas";
                     SqlDataAdapter cmd = new SqlDataAdapter(query, conexion);

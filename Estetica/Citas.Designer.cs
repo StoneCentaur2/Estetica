@@ -43,6 +43,8 @@ namespace Estetica
             this.TipoTrabajo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Modificar_Cita = new System.Windows.Forms.Button();
+            this.Eliminar_Cita = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -204,12 +206,40 @@ namespace Estetica
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // Modificar_Cita
+            // 
+            this.Modificar_Cita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Modificar_Cita.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Modificar_Cita.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Modificar_Cita.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Modificar_Cita.Location = new System.Drawing.Point(232, 473);
+            this.Modificar_Cita.Name = "Modificar_Cita";
+            this.Modificar_Cita.Size = new System.Drawing.Size(182, 51);
+            this.Modificar_Cita.TabIndex = 20;
+            this.Modificar_Cita.Text = "Modificar";
+            this.Modificar_Cita.UseVisualStyleBackColor = false;
+            // 
+            // Eliminar_Cita
+            // 
+            this.Eliminar_Cita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Eliminar_Cita.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Eliminar_Cita.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Eliminar_Cita.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Eliminar_Cita.Location = new System.Drawing.Point(232, 528);
+            this.Eliminar_Cita.Name = "Eliminar_Cita";
+            this.Eliminar_Cita.Size = new System.Drawing.Size(182, 51);
+            this.Eliminar_Cita.TabIndex = 21;
+            this.Eliminar_Cita.Text = "Eliminar cita";
+            this.Eliminar_Cita.UseVisualStyleBackColor = false;
+            // 
             // Citas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(101)))));
             this.ClientSize = new System.Drawing.Size(1372, 589);
+            this.Controls.Add(this.Eliminar_Cita);
+            this.Controls.Add(this.Modificar_Cita);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label4);
@@ -252,5 +282,7 @@ namespace Estetica
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox TipoTrabajo;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button Modificar_Cita;
+        private System.Windows.Forms.Button Eliminar_Cita;
     }
 }
