@@ -125,7 +125,7 @@ namespace Estetica
             else
             {
                 conexion.Open();
-                if (BD.BusquedaID(Convert.ToInt32(ID_Buscar.Text)) == 0)
+                if (BD.BusquedaID(Convert.ToInt32(ID_Buscar.Text)) == 1)
                 {
                     if (BD.RegistroCitas(dateTimePicker1.Text, Hora.Text) == 0)
                     {
@@ -165,6 +165,7 @@ namespace Estetica
             ID_Buscar.Visible = true;
             Eliminar_Cita.Enabled = false;
             Ingresar.Enabled = false;
+            Modificar_Cita.Enabled = true;
         }
 
         private void OpEliminarC_CheckedChanged(object sender, EventArgs e)
@@ -178,11 +179,20 @@ namespace Estetica
             ID_Buscar.Visible = true;
             Modificar_Cita.Enabled = false;
             Ingresar.Enabled = false;
+            Eliminar_Cita.Enabled = true;
         }
 
         private void Eliminar_Cita_Click(object sender, EventArgs e)
         {
+            if (BD.BusquedaID(Convert.ToInt32(ID_Buscar.Text)) == 1)
+            {
 
+                BD.EliminarCita(Convert.ToInt32(ID_Buscar.Text));
+            }
+            else
+            {
+                MessageBox.Show("Cita no encontrada");
+            }
             ID_Buscar.Text = "";
             string query = "SELECT * FROM Citas";
             SqlDataAdapter cmd = new SqlDataAdapter(query, conexion);

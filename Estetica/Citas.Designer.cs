@@ -130,6 +130,7 @@ namespace Estetica
             // 
             // Num_tel
             // 
+            this.Num_tel.Enabled = false;
             this.Num_tel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
             this.Num_tel.Location = new System.Drawing.Point(26, 200);
             this.Num_tel.Name = "Num_tel";
@@ -140,6 +141,7 @@ namespace Estetica
             // 
             // Nom
             // 
+            this.Nom.Enabled = false;
             this.Nom.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
             this.Nom.Location = new System.Drawing.Point(26, 258);
             this.Nom.Name = "Nom";
@@ -149,6 +151,7 @@ namespace Estetica
             // 
             // Hora
             // 
+            this.Hora.Enabled = false;
             this.Hora.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
             this.Hora.Location = new System.Drawing.Point(26, 432);
             this.Hora.MaxLength = 5;
@@ -173,6 +176,7 @@ namespace Estetica
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "";
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
             this.dateTimePicker1.Location = new System.Drawing.Point(26, 312);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -181,6 +185,7 @@ namespace Estetica
             // 
             // TipoTrabajo
             // 
+            this.TipoTrabajo.Enabled = false;
             this.TipoTrabajo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
             this.TipoTrabajo.Location = new System.Drawing.Point(26, 374);
             this.TipoTrabajo.Name = "TipoTrabajo";

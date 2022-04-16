@@ -80,5 +80,25 @@ namespace Estetica
             }
             return contador;
         }
+        public int EliminarCita(int ID_Citas)
+        {
+            int contador = 0;
+            try
+            {
+                cmd = new SqlCommand("DELETE FROM Citas WHERE ID_Citas = " + ID_Citas + "", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    contador++;
+                }
+                MessageBox.Show("Cita eliminada");
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar: " + ex.ToString());
+            }
+            return contador;
+        }
     }
 }
