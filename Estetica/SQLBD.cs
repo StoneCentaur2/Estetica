@@ -61,5 +61,24 @@ namespace Estetica
             }
             return contador;
         }
+        public int BusquedaID(int ID_Buscar)
+        {
+            int contador = 0;
+            try
+            {
+                cmd = new SqlCommand("SELECT * FROM Citas where ID_Citas = " + ID_Buscar + "", cn);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    contador++;
+                }
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar coincidencia, tipo: " + ex.ToString());
+            }
+            return contador;
+        }
     }
 }

@@ -26,13 +26,13 @@ namespace Estetica
 
         private void Ingresar_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "")
+            if (textBox1.Text == "")
             {
                 MessageBox.Show("Favor de ingresar datos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                string ingresar = "insert into ventas values (" + textBox1.Text + ", '" + textBox2.Text + "', '" + textBox3.Text + "', " + textBox4.Text + ")";
+                string ingresar = "insert into ventas values (" + textBox1.Text + ")";
                 if (BD.executecommand(ingresar))
                 {
                     MessageBox.Show("Datos ingresados correctamente");
@@ -43,9 +43,6 @@ namespace Estetica
                     MessageBox.Show("Error");
                 }
                 textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
             }
         }
 

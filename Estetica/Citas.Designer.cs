@@ -45,6 +45,11 @@ namespace Estetica
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Modificar_Cita = new System.Windows.Forms.Button();
             this.Eliminar_Cita = new System.Windows.Forms.Button();
+            this.ID_Buscar = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.OpModificiar = new System.Windows.Forms.RadioButton();
+            this.OpEliminarC = new System.Windows.Forms.RadioButton();
+            this.rB_ingresar = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -209,6 +214,7 @@ namespace Estetica
             // Modificar_Cita
             // 
             this.Modificar_Cita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Modificar_Cita.Enabled = false;
             this.Modificar_Cita.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Modificar_Cita.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Modificar_Cita.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -218,10 +224,12 @@ namespace Estetica
             this.Modificar_Cita.TabIndex = 20;
             this.Modificar_Cita.Text = "Modificar";
             this.Modificar_Cita.UseVisualStyleBackColor = false;
+            this.Modificar_Cita.Click += new System.EventHandler(this.Modificar_Cita_Click);
             // 
             // Eliminar_Cita
             // 
             this.Eliminar_Cita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Eliminar_Cita.Enabled = false;
             this.Eliminar_Cita.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Eliminar_Cita.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Eliminar_Cita.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -231,6 +239,71 @@ namespace Estetica
             this.Eliminar_Cita.TabIndex = 21;
             this.Eliminar_Cita.Text = "Eliminar cita";
             this.Eliminar_Cita.UseVisualStyleBackColor = false;
+            this.Eliminar_Cita.Click += new System.EventHandler(this.Eliminar_Cita_Click);
+            // 
+            // ID_Buscar
+            // 
+            this.ID_Buscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.ID_Buscar.Location = new System.Drawing.Point(282, 200);
+            this.ID_Buscar.Name = "ID_Buscar";
+            this.ID_Buscar.Size = new System.Drawing.Size(121, 27);
+            this.ID_Buscar.TabIndex = 22;
+            this.ID_Buscar.Visible = false;
+            this.ID_Buscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress_1);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label6.Location = new System.Drawing.Point(277, 168);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(126, 25);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "ID de la cita";
+            this.label6.Visible = false;
+            // 
+            // OpModificiar
+            // 
+            this.OpModificiar.AutoSize = true;
+            this.OpModificiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.OpModificiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.OpModificiar.Location = new System.Drawing.Point(245, 407);
+            this.OpModificiar.Name = "OpModificiar";
+            this.OpModificiar.Size = new System.Drawing.Size(121, 29);
+            this.OpModificiar.TabIndex = 24;
+            this.OpModificiar.TabStop = true;
+            this.OpModificiar.Text = "Modficiar";
+            this.OpModificiar.UseVisualStyleBackColor = true;
+            this.OpModificiar.CheckedChanged += new System.EventHandler(this.OpModificiar_CheckedChanged);
+            // 
+            // OpEliminarC
+            // 
+            this.OpEliminarC.AutoSize = true;
+            this.OpEliminarC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.OpEliminarC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.OpEliminarC.Location = new System.Drawing.Point(245, 438);
+            this.OpEliminarC.Name = "OpEliminarC";
+            this.OpEliminarC.Size = new System.Drawing.Size(155, 29);
+            this.OpEliminarC.TabIndex = 25;
+            this.OpEliminarC.TabStop = true;
+            this.OpEliminarC.Text = "Eliminar Cita";
+            this.OpEliminarC.UseVisualStyleBackColor = true;
+            this.OpEliminarC.CheckedChanged += new System.EventHandler(this.OpEliminarC_CheckedChanged);
+            // 
+            // rB_ingresar
+            // 
+            this.rB_ingresar.AutoSize = true;
+            this.rB_ingresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.rB_ingresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.rB_ingresar.Location = new System.Drawing.Point(127, 430);
+            this.rB_ingresar.Name = "rB_ingresar";
+            this.rB_ingresar.Size = new System.Drawing.Size(112, 29);
+            this.rB_ingresar.TabIndex = 26;
+            this.rB_ingresar.TabStop = true;
+            this.rB_ingresar.Text = "Ingresar";
+            this.rB_ingresar.UseVisualStyleBackColor = true;
+            this.rB_ingresar.CheckedChanged += new System.EventHandler(this.rB_ingresar_CheckedChanged);
             // 
             // Citas
             // 
@@ -238,6 +311,11 @@ namespace Estetica
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(101)))));
             this.ClientSize = new System.Drawing.Size(1372, 589);
+            this.Controls.Add(this.rB_ingresar);
+            this.Controls.Add(this.OpEliminarC);
+            this.Controls.Add(this.OpModificiar);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.ID_Buscar);
             this.Controls.Add(this.Eliminar_Cita);
             this.Controls.Add(this.Modificar_Cita);
             this.Controls.Add(this.label5);
@@ -284,5 +362,10 @@ namespace Estetica
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button Modificar_Cita;
         private System.Windows.Forms.Button Eliminar_Cita;
+        private System.Windows.Forms.TextBox ID_Buscar;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RadioButton OpModificiar;
+        private System.Windows.Forms.RadioButton OpEliminarC;
+        private System.Windows.Forms.RadioButton rB_ingresar;
     }
 }
