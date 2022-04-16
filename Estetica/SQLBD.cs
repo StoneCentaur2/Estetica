@@ -100,5 +100,20 @@ namespace Estetica
             }
             return contador;
         }
+        public void LimpiarTablas()
+        {
+            try
+            {
+                cmd = new SqlCommand("TRUNCATE TABLE Bitacora", cn);
+                cmd.ExecuteNonQuery();
+                cmd = new SqlCommand("TRUNCATE TABLE Trabajos", cn);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Registros eliminados");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo eliminar. /n Tipo de error: " + ex.ToString());
+            }
+        }
     }
 }

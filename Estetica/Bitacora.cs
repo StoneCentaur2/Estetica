@@ -47,7 +47,12 @@ namespace Estetica
 
         private void Limpiar_Click(object sender, EventArgs e)
         {
-
+            BD.LimpiarTablas(); 
+            string query = "SELECT * FROM Bitacora";
+            SqlDataAdapter cmd = new SqlDataAdapter(query, conexion);
+            DataTable dt = new DataTable();
+            cmd.Fill(dt);
+            dataGridView1.DataSource = dt;
         }
     }
 }

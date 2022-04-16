@@ -273,7 +273,7 @@ namespace Estetica
             this.OpModificiar.AutoSize = true;
             this.OpModificiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.OpModificiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.OpModificiar.Location = new System.Drawing.Point(245, 407);
+            this.OpModificiar.Location = new System.Drawing.Point(259, 407);
             this.OpModificiar.Name = "OpModificiar";
             this.OpModificiar.Size = new System.Drawing.Size(121, 29);
             this.OpModificiar.TabIndex = 24;
@@ -287,7 +287,7 @@ namespace Estetica
             this.OpEliminarC.AutoSize = true;
             this.OpEliminarC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.OpEliminarC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.OpEliminarC.Location = new System.Drawing.Point(245, 438);
+            this.OpEliminarC.Location = new System.Drawing.Point(259, 438);
             this.OpEliminarC.Name = "OpEliminarC";
             this.OpEliminarC.Size = new System.Drawing.Size(155, 29);
             this.OpEliminarC.TabIndex = 25;
@@ -301,7 +301,7 @@ namespace Estetica
             this.rB_ingresar.AutoSize = true;
             this.rB_ingresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.rB_ingresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.rB_ingresar.Location = new System.Drawing.Point(127, 430);
+            this.rB_ingresar.Location = new System.Drawing.Point(127, 432);
             this.rB_ingresar.Name = "rB_ingresar";
             this.rB_ingresar.Size = new System.Drawing.Size(112, 29);
             this.rB_ingresar.TabIndex = 26;
