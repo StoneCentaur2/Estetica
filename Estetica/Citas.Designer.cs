@@ -50,6 +50,10 @@ namespace Estetica
             this.OpModificiar = new System.Windows.Forms.RadioButton();
             this.OpEliminarC = new System.Windows.Forms.RadioButton();
             this.rB_ingresar = new System.Windows.Forms.RadioButton();
+            this.RBNum_Tel = new System.Windows.Forms.RadioButton();
+            this.RBNom = new System.Windows.Forms.RadioButton();
+            this.RBFecha = new System.Windows.Forms.RadioButton();
+            this.RBTrabajo = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -81,6 +85,7 @@ namespace Estetica
             // Ingresar
             // 
             this.Ingresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Ingresar.Enabled = false;
             this.Ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Ingresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ingresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -310,12 +315,64 @@ namespace Estetica
             this.rB_ingresar.UseVisualStyleBackColor = true;
             this.rB_ingresar.CheckedChanged += new System.EventHandler(this.rB_ingresar_CheckedChanged);
             // 
+            // RBNum_Tel
+            // 
+            this.RBNum_Tel.AutoSize = true;
+            this.RBNum_Tel.Location = new System.Drawing.Point(3, 206);
+            this.RBNum_Tel.Name = "RBNum_Tel";
+            this.RBNum_Tel.Size = new System.Drawing.Size(17, 16);
+            this.RBNum_Tel.TabIndex = 27;
+            this.RBNum_Tel.TabStop = true;
+            this.RBNum_Tel.UseVisualStyleBackColor = true;
+            this.RBNum_Tel.Visible = false;
+            this.RBNum_Tel.CheckedChanged += new System.EventHandler(this.RBNum_Tel_CheckedChanged);
+            // 
+            // RBNom
+            // 
+            this.RBNom.AutoSize = true;
+            this.RBNom.Location = new System.Drawing.Point(3, 264);
+            this.RBNom.Name = "RBNom";
+            this.RBNom.Size = new System.Drawing.Size(17, 16);
+            this.RBNom.TabIndex = 28;
+            this.RBNom.TabStop = true;
+            this.RBNom.UseVisualStyleBackColor = true;
+            this.RBNom.Visible = false;
+            this.RBNom.CheckedChanged += new System.EventHandler(this.RBNom_CheckedChanged);
+            // 
+            // RBFecha
+            // 
+            this.RBFecha.AutoSize = true;
+            this.RBFecha.Location = new System.Drawing.Point(3, 320);
+            this.RBFecha.Name = "RBFecha";
+            this.RBFecha.Size = new System.Drawing.Size(17, 16);
+            this.RBFecha.TabIndex = 29;
+            this.RBFecha.TabStop = true;
+            this.RBFecha.UseVisualStyleBackColor = true;
+            this.RBFecha.Visible = false;
+            this.RBFecha.CheckedChanged += new System.EventHandler(this.RBFecha_CheckedChanged);
+            // 
+            // RBTrabajo
+            // 
+            this.RBTrabajo.AutoSize = true;
+            this.RBTrabajo.Location = new System.Drawing.Point(3, 380);
+            this.RBTrabajo.Name = "RBTrabajo";
+            this.RBTrabajo.Size = new System.Drawing.Size(17, 16);
+            this.RBTrabajo.TabIndex = 30;
+            this.RBTrabajo.TabStop = true;
+            this.RBTrabajo.UseVisualStyleBackColor = true;
+            this.RBTrabajo.Visible = false;
+            this.RBTrabajo.CheckedChanged += new System.EventHandler(this.RBTrabajo_CheckedChanged);
+            // 
             // Citas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(101)))));
             this.ClientSize = new System.Drawing.Size(1372, 589);
+            this.Controls.Add(this.RBTrabajo);
+            this.Controls.Add(this.RBFecha);
+            this.Controls.Add(this.RBNom);
+            this.Controls.Add(this.RBNum_Tel);
             this.Controls.Add(this.rB_ingresar);
             this.Controls.Add(this.OpEliminarC);
             this.Controls.Add(this.OpModificiar);
@@ -372,5 +429,9 @@ namespace Estetica
         private System.Windows.Forms.RadioButton OpModificiar;
         private System.Windows.Forms.RadioButton OpEliminarC;
         private System.Windows.Forms.RadioButton rB_ingresar;
+        private System.Windows.Forms.RadioButton RBNum_Tel;
+        private System.Windows.Forms.RadioButton RBNom;
+        private System.Windows.Forms.RadioButton RBFecha;
+        private System.Windows.Forms.RadioButton RBTrabajo;
     }
 }

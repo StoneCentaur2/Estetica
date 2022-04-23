@@ -19,7 +19,7 @@ namespace Estetica
         {
             try
             {
-                cn= new SqlConnection("Data source=.\\sqlexpress; initial catalog=Estetica; user id=Orlando; Password=admin;");
+                cn = new SqlConnection("Data source=.\\sqlexpress; initial catalog=Estetica; user id=Orlando; Password=admin;");
                 cn.Open();
                 MessageBox.Show("Conexión abierta");
             }
@@ -30,7 +30,7 @@ namespace Estetica
         }
         public string insertarCitas(int ID_Citas, int Num_Tel, string Nombre, string Fecha, string TipoTrabajo, string Hora)
         {
-            string salida = "Cita ingresa correctamente";
+            string salida = "Cita ingresada correctamente";
             try
             {
                 cmd = new SqlCommand("insert into Citas values(" + ID_Citas + ", " + Num_Tel + ", '" + Nombre + "', '" + Fecha + "', '" + TipoTrabajo + "', '" + Hora + "')",cn);
@@ -114,6 +114,36 @@ namespace Estetica
             {
                 MessageBox.Show("No se pudo eliminar. /n Tipo de error: " + ex.ToString());
             }
+        }
+        public DataTable CargarCitas()
+        {
+            try
+            {
+                string query = "SELECT * FROM Citas";
+                SqlDataAdapter cmd = new SqlDataAdapter(query, cn);
+                DataTable dt = new DataTable();
+                cmd.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo cargar. /n Tipo de error: " + ex.ToString());
+                throw;
+            }
+        }
+        public string ModificaciónEnCitas(string Fila, string modificacion, int ID_Citas)
+        {
+            string salida = "Modificación con exito";
+            try
+            {
+                cmd = new SqlCommand("UPDATE Citas SET "+ Fila +" = '" + modificacion + "' WHERE ID_Citas = " + ID_Citas + " ", cn);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                salida = "Error de Mdoficiación: " + ex.ToString();
+            }
+            return salida;
         }
     }
 }

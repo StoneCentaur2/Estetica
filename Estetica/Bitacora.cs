@@ -32,11 +32,13 @@ namespace Estetica
         {
             try
             {
+                int semana = Convert.ToInt32(numeración.Value);
                 conexion.Open();
-                SqlCommand cmd = new SqlCommand("backup database Estetica to disk = 'C:\\Recuperación de base de datos\\BDEstetica_Respaldo.bak'", conexion);
+                SqlCommand cmd = new SqlCommand("backup database Estetica to disk = 'C:\\Recuperación de base de datos\\BDEstetica_Respaldo_Semana_"+ semana +".bak'", conexion);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Respaldo realizado");
                 conexion.Close();
+                Limpiar.Enabled = true;
             }
             catch (Exception ex)
             {

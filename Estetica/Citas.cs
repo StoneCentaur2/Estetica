@@ -99,11 +99,7 @@ namespace Estetica
 
         private void Citas_Load(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM Citas";
-            SqlDataAdapter cmd = new SqlDataAdapter(query, conexion);
-            DataTable dt = new DataTable();
-            cmd.Fill(dt);
-            dataGridView1.DataSource = dt;
+            dataGridView1.DataSource = BD.CargarCitas();
         }
 
         private void textBox1_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -118,51 +114,183 @@ namespace Estetica
 
         private void Modificar_Cita_Click(object sender, EventArgs e)
         {
-            if (Num_tel.Text == "" || Nom.Text == "" || TipoTrabajo.Text == "" || Hora.Text == "")
+            if (RBNum_Tel.Checked == true)
             {
-                MessageBox.Show("Favor de ingresar datos a modificar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                conexion.Open();
-                if (BD.BusquedaID(Convert.ToInt32(ID_Buscar.Text)) == 1)
-                {
-                    if (BD.RegistroCitas(dateTimePicker1.Text, Hora.Text) == 0)
-                    {
+                Nom.Text = "";
+                TipoTrabajo.Text = "";
+                Hora.Text = "";
 
+                if (Num_tel.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar los datos a modificar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                else if (ID_Buscar.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar el ID de la cita a modificar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                else
+                {
+                    string Fila = "Num_tel";
+                    conexion.Open();
+                    if (BD.BusquedaID(Convert.ToInt32(ID_Buscar.Text)) == 1)
+                    {
+                        MessageBox.Show(BD.ModificaciónEnCitas(Fila, Num_tel.Text, Convert.ToInt32(ID_Buscar.Text)));
                         Num_tel.Text = "";
-                        Nom.Text = "";
-                        TipoTrabajo.Text = "";
-                        Hora.Text = "";
                         ID_Buscar.Text = "";
-                        string query = "SELECT * FROM Citas";
-                        SqlDataAdapter cmd = new SqlDataAdapter(query, conexion);
-                        DataTable dt = new DataTable();
-                        cmd.Fill(dt);
-                        dataGridView1.DataSource = dt;
+                        dataGridView1.DataSource = BD.CargarCitas();
+                        RBNum_Tel.Checked = false;
+                        Num_tel.Enabled = false;
+                        ID_Buscar.Enabled = false;
                     }
                     else
                     {
-                        MessageBox.Show("Fecha ya apartada");
+                        MessageBox.Show("Cita no encontrada");
                     }
+                    conexion.Close();
                 }
+            }
+            else if (RBNom.Checked == true)
+            {
+                Num_tel.Text = "";
+                TipoTrabajo.Text = "";
+                Hora.Text = "";
+
+                if (Nom.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar los datos a modificar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                else if (ID_Buscar.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar el ID de la cita a modificar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
                 else
                 {
-                    MessageBox.Show("Cita no encontrada");
+                    string Fila = "Nombre";
+                    conexion.Open();
+                    if (BD.BusquedaID(Convert.ToInt32(ID_Buscar.Text)) == 1)
+                    {
+                        MessageBox.Show(BD.ModificaciónEnCitas(Fila, Nom.Text, Convert.ToInt32(ID_Buscar.Text)));
+                        Nom.Text = "";
+                        ID_Buscar.Text = "";
+                        RBNom.Checked = false;
+                        dataGridView1.DataSource = BD.CargarCitas();
+                        Nom.Enabled = false;
+                        ID_Buscar.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cita no encontrada");
+                    }
+                    conexion.Close();
                 }
-                conexion.Close();
+            }
+            else if (RBFecha.Checked == true)
+            {
+                Num_tel.Text = "";
+                Nom.Text = "";
+                TipoTrabajo.Text = "";
+
+                if (Hora.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar los datos a modificar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                else if (ID_Buscar.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar el ID de la cita a modificar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                else
+                {
+                    string FilaFecha = "Fecha";
+                    string FilaHora = "Hora";
+                    conexion.Open();
+                    if (BD.BusquedaID(Convert.ToInt32(ID_Buscar.Text)) == 1)
+                    {
+                        if (BD.RegistroCitas(dateTimePicker1.Text, Hora.Text) == 0)
+                        {
+                            MessageBox.Show(BD.ModificaciónEnCitas(FilaFecha, dateTimePicker1.Text, Convert.ToInt32(ID_Buscar.Text)));
+                            BD.ModificaciónEnCitas(FilaHora, Hora.Text, Convert.ToInt32(ID_Buscar.Text));
+                            Hora.Text = "";
+                            ID_Buscar.Text = "";
+                            RBFecha.Checked = false;
+                            dataGridView1.DataSource = BD.CargarCitas();
+                            Hora.Enabled = false;
+                            dateTimePicker1.Enabled = false;
+                            ID_Buscar.Enabled = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fecha ya apartada");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cita no encontrada");
+                    }
+                    conexion.Close();
+                }
+            }
+            else if (RBTrabajo.Checked == true)
+            {
+                Num_tel.Text = "";
+                Nom.Text = "";
+                Hora.Text = "";
+
+                if (TipoTrabajo.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar los datos a modificar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                else if (ID_Buscar.Text == "")
+                {
+                    MessageBox.Show("Favor de ingresar el ID de la cita a modificar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                else
+                {
+                    string Fila = "TipoTrabajo";
+                    conexion.Open();
+                    if (BD.BusquedaID(Convert.ToInt32(ID_Buscar.Text)) == 1)
+                    {
+                        MessageBox.Show(BD.ModificaciónEnCitas(Fila, TipoTrabajo.Text, Convert.ToInt32(ID_Buscar.Text)));
+                        TipoTrabajo.Text = "";
+                        ID_Buscar.Text = "";
+                        RBTrabajo.Checked = false;
+                        dataGridView1.DataSource = BD.CargarCitas();
+                        TipoTrabajo.Enabled = false;
+                        ID_Buscar.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cita no encontrada");
+                    }
+                    conexion.Close();
+                }
             }
         }
 
         private void OpModificiar_CheckedChanged(object sender, EventArgs e)
         {
-            Num_tel.Enabled = true;
-            Nom.Enabled = true;
-            dateTimePicker1.Enabled = true;
-            TipoTrabajo.Enabled = true;
-            Hora.Enabled = true;
+            //Radiobotton
+            RBNum_Tel.Visible = true;
+            RBNom.Visible = true;
+            RBFecha.Visible = true;
+            RBTrabajo.Visible = true;
+            //De busqueda
             label6.Visible = true;
             ID_Buscar.Visible = true;
+            //Contenido de texto
+            Num_tel.Text = "";
+            Nom.Text = "";
+            TipoTrabajo.Text = "";
+            Hora.Text = "";
+            ID_Buscar.Text = "";
+            //RadioBotton de seleccion
             Eliminar_Cita.Enabled = false;
             Ingresar.Enabled = false;
             Modificar_Cita.Enabled = true;
@@ -170,13 +298,27 @@ namespace Estetica
 
         private void OpEliminarC_CheckedChanged(object sender, EventArgs e)
         {
+            //Radiobotton
+            RBNum_Tel.Visible = false;
+            RBNom.Visible = false;
+            RBFecha.Visible = false;
+            RBTrabajo.Visible = false;
+            //De interaccion
             Num_tel.Enabled = false;
             Nom.Enabled = false;
             dateTimePicker1.Enabled = false;
             TipoTrabajo.Enabled = false;
             Hora.Enabled = false;
+            //De busqueda
             label6.Visible = true;
             ID_Buscar.Visible = true;
+            //Contenido de texto
+            Num_tel.Text = "";
+            Nom.Text = "";
+            TipoTrabajo.Text = "";
+            Hora.Text = "";
+            ID_Buscar.Text = "";
+            //RadioBotton de seleccion
             Modificar_Cita.Enabled = false;
             Ingresar.Enabled = false;
             Eliminar_Cita.Enabled = true;
@@ -184,14 +326,21 @@ namespace Estetica
 
         private void Eliminar_Cita_Click(object sender, EventArgs e)
         {
-            if (BD.BusquedaID(Convert.ToInt32(ID_Buscar.Text)) == 1)
+            if (ID_Buscar.Text == "")
             {
-
-                BD.EliminarCita(Convert.ToInt32(ID_Buscar.Text));
+                MessageBox.Show("Favor de ingresar ID de la cita para buscar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                MessageBox.Show("Cita no encontrada");
+                if (BD.BusquedaID(Convert.ToInt32(ID_Buscar.Text)) == 1)
+                {
+
+                    BD.EliminarCita(Convert.ToInt32(ID_Buscar.Text));
+                }
+                else
+                {
+                    MessageBox.Show("Cita no encontrada");
+                }
             }
             ID_Buscar.Text = "";
             string query = "SELECT * FROM Citas";
@@ -203,16 +352,66 @@ namespace Estetica
 
         private void rB_ingresar_CheckedChanged(object sender, EventArgs e)
         {
+            //Radiobotton
+            RBNum_Tel.Visible = false;
+            RBNom.Visible = false;
+            RBFecha.Visible = false;
+            RBTrabajo.Visible = false;
+            //De interaccion
             Num_tel.Enabled = true;
             Nom.Enabled = true;
             dateTimePicker1.Enabled = true;
             TipoTrabajo.Enabled = true;
             Hora.Enabled = true;
+            //De busqueda
             label6.Visible = false;
             ID_Buscar.Visible = false;
+            //Contenido de texto
+            Num_tel.Text = "";
+            Nom.Text = "";
+            TipoTrabajo.Text = "";
+            Hora.Text = "";
+            ID_Buscar.Text = "";
+            //RadioBotton de seleccion
             Modificar_Cita.Enabled = false;
             Eliminar_Cita.Enabled = false;
             Ingresar.Enabled = true;
+        }
+
+        private void RBNum_Tel_CheckedChanged(object sender, EventArgs e)
+        {
+            Nom.Enabled = false;
+            dateTimePicker1.Enabled = false;
+            TipoTrabajo.Enabled = false;
+            Hora.Enabled = false;
+            Num_tel.Enabled = true;
+        }
+
+        private void RBNom_CheckedChanged(object sender, EventArgs e)
+        {
+            Num_tel.Enabled = false;
+            dateTimePicker1.Enabled = false;
+            TipoTrabajo.Enabled = false;
+            Hora.Enabled = false;
+            Nom.Enabled = true;
+        }
+
+        private void RBFecha_CheckedChanged(object sender, EventArgs e)
+        {
+            Num_tel.Enabled = false;
+            Nom.Enabled = false;
+            TipoTrabajo.Enabled = false;
+            Hora.Enabled = true;
+            dateTimePicker1.Enabled = true;
+        }
+
+        private void RBTrabajo_CheckedChanged(object sender, EventArgs e)
+        {
+            Num_tel.Enabled = false;
+            Nom.Enabled = false;
+            dateTimePicker1.Enabled = false;
+            Hora.Enabled = false;
+            TipoTrabajo.Enabled = true;
         }
     }
 }

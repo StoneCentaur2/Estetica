@@ -98,6 +98,7 @@ namespace Estetica
             // Limpiar
             // 
             this.Limpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Limpiar.Enabled = false;
             this.Limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.Limpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -111,7 +112,7 @@ namespace Estetica
             // 
             // numeración
             // 
-            this.numeración.Location = new System.Drawing.Point(208, 141);
+            this.numeración.Location = new System.Drawing.Point(226, 141);
             this.numeración.Name = "numeración";
             this.numeración.Size = new System.Drawing.Size(50, 22);
             this.numeración.TabIndex = 8;
