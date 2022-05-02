@@ -5,3 +5,4 @@ SELECT * FROM Citas
 DELETE FROM Citas WHERE ID_Citas =8448164
 insert into Bitacora values('Maria', 'Fernanda', '','Cancelacion',151531168,'Corte',60)
 insert into Trabajos values(62900133, '', 'Corte',10)
+UPDATE Citas SET Nombre = 'Maria Fernanda' WHERE ID_Citas = 9975068

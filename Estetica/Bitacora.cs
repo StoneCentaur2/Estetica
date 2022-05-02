@@ -21,6 +21,7 @@ namespace Estetica
             DataTable dt = new DataTable();
             cmd.Fill(dt);
             dataGridView1.DataSource = dt;
+            /*int tiempo = DateTime.Now.Date.Hour;*/
         }
 
         private void Salir_Click(object sender, EventArgs e)

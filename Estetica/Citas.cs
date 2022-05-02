@@ -309,6 +309,7 @@ namespace Estetica
             dateTimePicker1.Enabled = false;
             TipoTrabajo.Enabled = false;
             Hora.Enabled = false;
+            ID_Buscar.Enabled = true;
             //De busqueda
             label6.Visible = true;
             ID_Buscar.Visible = true;
@@ -342,12 +343,8 @@ namespace Estetica
                     MessageBox.Show("Cita no encontrada");
                 }
             }
-            ID_Buscar.Text = "";
-            string query = "SELECT * FROM Citas";
-            SqlDataAdapter cmd = new SqlDataAdapter(query, conexion);
-            DataTable dt = new DataTable();
-            cmd.Fill(dt);
-            dataGridView1.DataSource = dt;
+          ID_Buscar.Text = "";
+          dataGridView1.DataSource = BD.CargarCitas();
         }
 
         private void rB_ingresar_CheckedChanged(object sender, EventArgs e)
