@@ -1,12 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -102,9 +94,9 @@ namespace Estetica
                         {
                             Usuario.Text = lector.GetString(0);
                         }
-                        //se hizo con la intensión de que los lea de forma separada cada comando
-                        conexion.Close();//Cierre de la conexión de la Base de Datos
-                        conexion.Open();//Apertura de la conexión de la Base de Datos
+                        //se hizo una cierre y apertura de comando, para que los lea de forma separada cada comando
+                        conexion.Close();
+                        conexion.Open();
                         
                         //comando de sql para ejecutar en sql en busqueda de la Contraseña
                         SqlCommand comandoContra = new SqlCommand(sqlContra, conexion);
@@ -135,7 +127,7 @@ namespace Estetica
                         MessageBox.Show("Usuario no encontrado, favor de verificar usuario");
                     }
                 }
-                catch (MySqlException error)
+                catch (SqlException error)
                 {
                     MessageBox.Show("Error en la busqueda " + error.Message);
                 }
